@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Project 1</title>
+
+    <style>
+        html, body, .container {
+            height: 100%;
+            background-color: antiquewhite;
+        }
+        input {
+            font-size: large;
+            padding : 10px 30px;
+        }
+        button{
+            padding: 12px 30px;
+        }
+        .calc{
+            position: relative;
+            float: left;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .calc p{
+            text-align: center;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="calc">
+            <p> Tambah Dua Angka </p>
+            <input type="text" size="5" placeholder="0" />
+            +
+            <input type="text" size="5" placeholder="0" />
+
+            <button> = </button>
+            <input type="text" size="5" readonly />
+            <script src="index.js"></script>
+        </div>
+    </div>
+</body>
+
+</html>

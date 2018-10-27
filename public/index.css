@@ -1,0 +1,88 @@
+html,
+    body {
+      background-color: whitesmoke;
+      height: 100%;
+      width: 100vw;
+    }
+
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      height: 100%;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 80px 1fr 1fr 1fr 40px;
+      text-align: center;
+      grid-gap: 4px;
+
+    }
+
+    .navbar {
+      /* background-color: coral; */
+      background: #cfb9ec;
+      grid-column: 1/5;
+    }
+
+    .menu {
+      background-color: burlywood;
+      grid-column: 1/2;
+      grid-row: 2/5;
+    }
+
+    .inside {
+      margin-top: 40%;
+    }
+
+    .web:link {
+      color: red;
+    }
+
+    .web:visited {
+      color: orangered;
+    }
+
+    .web:hover {
+      color: hotpink;
+    }
+
+    .web:active {
+      color: blue;
+    }
+
+    .content {
+      background-color: plum;
+      grid-column: 2/5;
+      grid-row-gap: 4px;
+    }
+
+    .inner {
+      margin-top: 6%;
+      align-self: center;
+    }
+
+    .button {
+      background-color: palevioletred;
+      border: none;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      font-weight: bold;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .footer {
+      background-color: #dbcfe7;
+      grid-column: 1/5;
+      grid-row: 5/5;
+      line-height: 40px;
+      font-size: 14px;
+    }

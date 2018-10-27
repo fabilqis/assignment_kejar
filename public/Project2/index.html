@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+        crossorigin="" />
+    <title>MapBox</title>
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDjoL3WU6i-6uH4d0U4wX9hRKS_3ueVLiE",
+            authDomain: "mapbox-564ae.firebaseapp.com",
+            databaseURL: "https://mapbox-564ae.firebaseio.com",
+            projectId: "mapbox-564ae",
+            storageBucket: "mapbox-564ae.appspot.com",
+            messagingSenderId: "945886394332"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+
+        p {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        #mapid {
+            /* margin-top: 6%; */
+            height: 500px;
+        }
+
+        .container {
+            display: grid;
+            height: 100%;
+            grid-gap: 4px;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: 60% 40%;
+        }
+
+        .peta {
+            grid-column: 1/-1;
+        }
+
+        .gambar {
+            background: green;
+            grid-column: 1/6;
+        }
+
+        .review {
+            background: yellow;
+            grid-column: 6/-1;
+        }
+    </style>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+        crossorigin=""></script>
+</head>
+
+<body>
+    <h1>
+        <center>Best Seafood In Batam</center>
+    </h1>
+
+    <div class="container">
+
+        <div class="peta" id="mapid"></div>
+        <div class="gambar">
+            Gambar disini
+        </div>
+        <div class="review">
+            review disini
+        </div>
+    </div>
+
+    <script>
+        var mymap = L.map('mapid').setView([0.9857463, 104.097475], 10);
+
+        L.tileLayer(
+            'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=sk.eyJ1IjoiZmFiaWxxaXMiLCJhIjoiY2ptYXJoYTRuMDVoaDNwcWhvbzZsMXFoMiJ9.jgkQkRm6UFvux9GobBX1rw', {
+                maxZoom: 20,
+                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                    '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                    'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                id: 'mapbox.streets'
+            }).addTo(mymap);
+
+        var arr_marker = [
+            [0.9857463, 104.097475,
+                "<img src='../Asset/love.jpg' style='width:150px;height:150px;'/> <p style='font-size:15px'><b>Love Seafood</b></p> <p>Kampung Tua RT. 02 / RW. 10, Tanjung Piayu, Sei Beduk, Batam</p> "
+            ],
+            [1.152815, 103.998083,
+                "<img src='../Asset/wey.jpg' style='width:150px;height:150px;'/> <p style='font-size:15px'><b>Wei-wei Seafood</b></p> <p> Harbour Bay Downtown Sei Jodoh, Jl. Duyung, Batam </p>"
+            ],
+            [1.127597, 104.051525,
+                "<img src='../Asset/sei.jpg' style='width:150px;height:150px;'/> <p style='font-size:15px'><b>Seienam Seafood Batam</b></p> <p>Ruko Nusantara, Jl. Engku Putri No.4-6, Tlk. Tering, Batam Kota, Batam</p>"
+            ],
+            [0.981518, 104.036113,
+                "<img src='../Asset/barelang.jpg' style='width:150px;height:150px;'/> <p style='font-size:15px'><b>Barelang Seafood</b></p> <p> Jalan Trans Barelang City, Tembesi, Sagulung, Batam</p>"
+            ],
+            [1.130110, 104.035249,
+                "<img src='../Asset/kepiting.jpg' style='width:150px;height:150px;'/> <p style='font-size:15px'><b>Rumah Makan Pondok Kepiting</b></p> <p>Ruko Kintamani, Jl. Raja H. Fisabilillah, Sungai Panas, Batam Kota, Batam</p>"
+            ]
+        ]
+
+        for (m of arr_marker) {
+            L.marker(m)
+                .bindPopup(m[2])
+                .addTo(mymap);
+        }
+        mymap.on('click', onMapClick);
+    </script>
+</body>
+
+</html>

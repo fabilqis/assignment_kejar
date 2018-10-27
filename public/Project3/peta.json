@@ -1,0 +1,36 @@
+{
+    "places" : [{
+        "lokasi": [0.9857463, 104.097475],
+        "sponsor" : "Love Seafood",
+        "gambar": "../Asset/love.jpg",
+        "review" : "Seafood terkenal berlokasi di Piayu Laut, Tanjung Piayu. Terkenal dengan kelezatan masakannya."
+    },
+    {
+        "lokasi" :[1.152815, 103.998083],
+        "sponsor" : "Wey-wey Seafood",
+        "gambar": "../Asset/wey.jpg",
+        "review" : "Jika jalan-jalan ke Harbour Bay, Jodoh. Kurang lengkap rasanya jika tidak mampir ke Wey-wey Seafood."
+
+    },
+    {
+        "lokasi" :[1.127597, 104.051525],
+        "sponsor" : "Sei Enam Seafood",
+        "gambar": "../Asset/sei.jpg",
+        "review" : "Seafood Sei Enam menyediakan hidangan lezat dengan tempat yang nyaman serta elegan."
+
+    },
+    {
+        "lokasi" :[0.981518, 104.036113],
+        "sponsor" : "Barelang Seafood",
+        "gambar": "../Asset/barelang.jpg",
+        "review" :"Barelang Seafood yang terletak di jembatan 1 Barelang ini terdapat tambak yang ikannya langsung dimasak dari ikan yang tersedia ditambak tersebut."
+
+    },
+    {
+        "lokasi" :[1.130110, 104.035249],
+        "sponsor" : "Rumah Makan Pondok Kepiting",
+        "gambar": "../Asset/kepiting.jpg",
+        "review" :"Rumah Makan Pondok Kepiting untuk kamu yang doyan olahan serba kepiting, Terletak di Sungai Panas, Batam Kota."
+    }
+
+]}
